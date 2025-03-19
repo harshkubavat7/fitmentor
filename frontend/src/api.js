@@ -63,32 +63,19 @@ export const getMessages = async (user1, user2) => {
 
 // ✅ User Signup
 export const signup = async (userData) => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) throw new Error("Signup failed");
-    return response.json();
-  } catch (error) {
-    console.error("❌ Error during signup:", error);
-  }
+  const response = await fetch(`${API_BASE_URL}/api/auth/signup`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userData),
+  });
+  return response.json();
 };
 
-// ✅ User Login
 export const login = async (userData) => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(userData),
-    });
-
-    if (!response.ok) throw new Error("Login failed");
-    return response.json();
-  } catch (error) {
-    console.error("❌ Error during login:", error);
-  }
+  const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(userData),
+  });
+  return response.json();
 };
